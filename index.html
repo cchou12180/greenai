@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainable AI Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Sustainable AI Solutions</h1>
+        <div class="subtitle">Building a greener future for artificial intelligence</div>
+        <div class="author" style="color: white;">By CC Yishan Hou</div>
+        <div class="project-info" style="color: white;">Computing On Earth Class Project at Cornell University, Spring 2025</div>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>The Environmental Impact of AI</h2>
+            <div class="interactive-container">
+                <div class="text-content">
+                    <p>As artificial intelligence becomes increasingly integrated into our daily lives, its environmental footprint grows. From training large language models to running inference at scale, AI systems consume significant energy and water resources.</p>
+                    <p>Explore our five pillars of sustainable AI to learn how the industry is addressing these challenges.</p>
+                </div>
+                <div class="animation-container">
+                    <canvas id="resource-usage-chart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <div class="pillars-container">
+            <!-- Pillar 1: Efficient Models -->
+            <section id="pillar1" class="pillar">
+                <h2>1. Efficient Models</h2>
+                <div class="interactive-container">
+                    <div class="text-content">
+                        <p>Modern AI development focuses on creating more efficient models that require less computational resources while maintaining high performance.</p>
+                        <ul>
+                            <li><strong>Pruning:</strong> Removing unnecessary connections in neural networks</li>
+                            <li><strong>Quantization:</strong> Using lower precision for calculations</li>
+                            <li><strong>Knowledge Distillation:</strong> Training smaller models to mimic larger ones</li>
+                            <li><strong>Sparse Activation:</strong> Only activating necessary pathways during inference</li>
+                        </ul>
+                    </div>
+                    <div class="interactive-element">
+                        <h3>Model Size vs. Accuracy</h3>
+                        <div class="slider-container">
+                            <label for="model-size">Model Size: <span id="size-value">100%</span></label>
+                            <input type="range" id="model-size" min="10" max="100" value="100" class="slider">
+                            <div class="metrics">
+                                <div>Accuracy: <span id="accuracy-value">99%</span></div>
+                                <div>Energy Usage: <span id="energy-value">100%</span></div>
+                            </div>
+                        </div>
+                        <div id="model-visualization"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pillar 2: Smarter Hardware -->
+            <section id="pillar2" class="pillar">
+                <h2>2. Smarter Hardware</h2>
+                <div class="interactive-container">
+                    <div class="text-content">
+                        <p>Purpose-built AI accelerators and optimized hardware architectures significantly improve energy efficiency for AI workloads.</p>
+                        <ul>
+                            <li><strong>Specialized AI Chips:</strong> GPUs, TPUs, and other accelerators designed for AI workloads</li>
+                            <li><strong>Improved Architectures:</strong> Reducing overhead and improving thermal performance</li>
+                            <li><strong>Performance per Watt:</strong> Maximizing computational output while minimizing energy consumption</li>
+                        </ul>
+                    </div>
+                    <div class="interactive-element">
+                        <h3>Hardware Efficiency Comparison</h3>
+                        <div class="hardware-comparison">
+                            <div class="hardware-selector">
+                                <button class="hw-btn active" data-hardware="cpu">CPU</button>
+                                <button class="hw-btn" data-hardware="gpu">GPU</button>
+                                <button class="hw-btn" data-hardware="tpu">TPU</button>
+                                <button class="hw-btn" data-hardware="asic">ASIC</button>
+                            </div>
+                            <div class="hardware-metrics">
+                                <canvas id="hardware-chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pillar 3: Greener Data Centers -->
+            <section id="pillar3" class="pillar">
+                <h2>3. Greener Data Centers</h2>
+                <div class="interactive-container">
+                    <div class="text-content">
+                        <p>Data centers hosting AI workloads are transitioning to renewable energy sources and implementing water-saving technologies.</p>
+                        <ul>
+                            <li><strong>Renewable Energy:</strong> Powering data centers with solar, wind, and hydroelectric energy</li>
+                            <li><strong>Power Usage Effectiveness (PUE):</strong> Optimizing energy efficiency in data centers</li>
+                            <li><strong>Water Conservation:</strong> Implementing closed-loop cooling and water reuse systems</li>
+                        </ul>
+                    </div>
+                    <div class="interactive-element">
+                        <h3>Global Data Center Map</h3>
+                        <div id="data-center-map"></div>
+                        <div class="map-legend">
+                            <div class="legend-item"><span class="legend-color" style="background-color: #8BC34A;"></span> 100% Renewable</div>
+                            <div class="legend-item"><span class="legend-color" style="background-color: #CDDC39;"></span> 50-99% Renewable</div>
+                            <div class="legend-item"><span class="legend-color" style="background-color: #FFEB3B;"></span> 1-49% Renewable</div>
+                            <div class="legend-item"><span class="legend-color" style="background-color: #FF9800;"></span> 0% Renewable</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pillar 4: Strategic Deployment -->
+            <section id="pillar4" class="pillar">
+                <h2>4. Strategic Deployment</h2>
+                <div class="interactive-container">
+                    <div class="text-content">
+                        <p>Strategic planning of AI workloads and lifecycle assessments help optimize resource usage and reduce environmental impact.</p>
+                        <ul>
+                            <li><strong>Workload Scheduling:</strong> Running intensive tasks during periods of high renewable energy availability</li>
+                            <li><strong>Lifecycle Assessment:</strong> Considering the full environmental impact from manufacturing to disposal</li>
+                            <li><strong>Resource Optimization:</strong> Balancing computational needs with environmental constraints</li>
+                        </ul>
+                    </div>
+                    <div class="interactive-element">
+                        <h3>Workload Scheduling Simulator</h3>
+                        <div class="time-selector">
+                            <label for="time-slider">Time of Day: <span id="time-value">12:00</span></label>
+                            <input type="range" id="time-slider" min="0" max="23" value="12" class="slider">
+                        </div>
+                        <div class="energy-mix-display">
+                            <canvas id="energy-mix-chart"></canvas>
+                        </div>
+                        <div class="recommendation-box">
+                            <h4>Recommendation:</h4>
+                            <p id="scheduling-recommendation">Current time has moderate renewable energy availability. Consider scheduling medium-priority workloads.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pillar 5: Transparency and Accountability -->
+            <section id="pillar5" class="pillar">
+                <h2>5. Transparency and Accountability</h2>
+                <div class="interactive-container">
+                    <div class="text-content">
+                        <p>Increasing transparency about AI's environmental impact enables better decision-making and accountability.</p>
+                        <ul>
+                            <li><strong>Environmental Impact Reporting:</strong> Publishing carbon and water footprints alongside performance metrics</li>
+                            <li><strong>Standardized Assessments:</strong> Developing common tools and metrics for measuring environmental impact</li>
+                            <li><strong>Informed Decision-Making:</strong> Enabling users to choose more sustainable AI solutions</li>
+                        </ul>
+                    </div>
+                    <div class="interactive-element">
+                        <h3>Sustainability Quiz</h3>
+                        <div id="quiz-container">
+                            <div id="question-container">
+                                <p id="question">Which technique reduces the size of neural networks by removing unnecessary connections?</p>
+                                <div id="answer-buttons" class="btn-grid">
+                                    <button class="quiz-btn">Quantization</button>
+                                    <button class="quiz-btn">Pruning</button>
+                                    <button class="quiz-btn">Knowledge Distillation</button>
+                                    <button class="quiz-btn">Sparse Activation</button>
+                                </div>
+                            </div>
+                            <div class="controls">
+                                <button id="next-btn" class="next-btn">Next</button>
+                            </div>
+                            <div id="score-container" class="hide">
+                                <h3>Your Score: <span id="score">0</span>/5</h3>
+                                <button id="restart-btn">Restart Quiz</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section class="call-to-action">
+            <h2>Join the Movement for Sustainable AI</h2>
+            <p>By implementing these five pillars, we can significantly reduce the environmental impact of artificial intelligence while continuing to advance the technology.</p>
+            <div class="action-buttons">
+                <a href="resources.html" id="resources-btn" class="action-btn">Resources</a>
+                <button id="share-btn" class="action-btn">Share This Page</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
