@@ -13,7 +13,6 @@
         <h1>Sustainable AI Solutions</h1>
         <div class="subtitle">Building a greener future for artificial intelligence</div>
         <div class="author" style="color: white;">By CC Yishan Hou</div>
-        <div class="project-info" style="color: white;">Computing On Earth Class Project at Cornell University, Spring 2025</div>
     </header>
 
     <main>
@@ -24,11 +23,14 @@
                     <p>As artificial intelligence becomes increasingly integrated into our daily lives, its environmental footprint grows. From training large language models to running inference at scale, AI systems consume significant energy and water resources.</p>
                     <p>Explore our five pillars of sustainable AI to learn how the industry is addressing these challenges.</p>
                 </div>
-                <div class="animation-container">
-                    <canvas id="resource-usage-chart"></canvas>
-                </div>
             </div>
         </section>
+
+        <!-- Resource Consumption Comparison Chart (Standalone) -->
+        <div class="resource-chart-container">
+            <h3>Resource Consumption Comparison</h3>
+            <canvas id="resource-usage-chart"></canvas>
+        </div>
 
         <div class="pillars-container">
             <!-- Pillar 1: Efficient Models -->
@@ -59,9 +61,34 @@
                 </div>
             </section>
 
-            <!-- Pillar 2: Smarter Hardware -->
+            <!-- Pillar 2: Greener Data Centers -->
             <section id="pillar2" class="pillar">
-                <h2>2. Smarter Hardware</h2>
+                <h2>2. Greener Data Centers</h2>
+                <div class="interactive-container">
+                    <div class="text-content">
+                        <p>Data centers hosting AI workloads are transitioning to renewable energy sources and implementing water-saving technologies.</p>
+                        <ul>
+                            <li><strong>Renewable Energy:</strong> Powering data centers with solar, wind, and hydroelectric energy</li>
+                            <li><strong>Power Usage Effectiveness (PUE):</strong> Optimizing energy efficiency in data centers</li>
+                            <li><strong>Water Conservation:</strong> Implementing closed-loop cooling and water reuse systems</li>
+                        </ul>
+                    </div>
+                    <div class="interactive-element">
+                        <h3>Global Data Center Map</h3>
+                        <div id="data-center-map"></div>
+                        <div class="map-legend">
+                            <div class="legend-item"><span class="legend-color" style="background-color: #8BC34A;"></span> 100% Renewable</div>
+                            <div class="legend-item"><span class="legend-color" style="background-color: #CDDC39;"></span> 50-99% Renewable</div>
+                            <div class="legend-item"><span class="legend-color" style="background-color: #FFEB3B;"></span> 1-49% Renewable</div>
+                            <div class="legend-item"><span class="legend-color" style="background-color: #FF9800;"></span> 0% Renewable</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pillar 3: Smarter Hardware -->
+            <section id="pillar3" class="pillar">
+                <h2>3. Smarter Hardware</h2>
                 <div class="interactive-container">
                     <div class="text-content">
                         <p>Purpose-built AI accelerators and optimized hardware architectures significantly improve energy efficiency for AI workloads.</p>
@@ -83,31 +110,6 @@
                             <div class="hardware-metrics">
                                 <canvas id="hardware-chart"></canvas>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Pillar 3: Greener Data Centers -->
-            <section id="pillar3" class="pillar">
-                <h2>3. Greener Data Centers</h2>
-                <div class="interactive-container">
-                    <div class="text-content">
-                        <p>Data centers hosting AI workloads are transitioning to renewable energy sources and implementing water-saving technologies.</p>
-                        <ul>
-                            <li><strong>Renewable Energy:</strong> Powering data centers with solar, wind, and hydroelectric energy</li>
-                            <li><strong>Power Usage Effectiveness (PUE):</strong> Optimizing energy efficiency in data centers</li>
-                            <li><strong>Water Conservation:</strong> Implementing closed-loop cooling and water reuse systems</li>
-                        </ul>
-                    </div>
-                    <div class="interactive-element">
-                        <h3>Global Data Center Map</h3>
-                        <div id="data-center-map"></div>
-                        <div class="map-legend">
-                            <div class="legend-item"><span class="legend-color" style="background-color: #8BC34A;"></span> 100% Renewable</div>
-                            <div class="legend-item"><span class="legend-color" style="background-color: #CDDC39;"></span> 50-99% Renewable</div>
-                            <div class="legend-item"><span class="legend-color" style="background-color: #FFEB3B;"></span> 1-49% Renewable</div>
-                            <div class="legend-item"><span class="legend-color" style="background-color: #FF9800;"></span> 0% Renewable</div>
                         </div>
                     </div>
                 </div>
@@ -179,12 +181,12 @@
             </section>
         </div>
 
-        <section class="call-to-action">
+        <section class="call-to-action" id="call-to-action">
             <h2>Join the Movement for Sustainable AI</h2>
             <p>By implementing these five pillars, we can significantly reduce the environmental impact of artificial intelligence while continuing to advance the technology.</p>
             <div class="action-buttons">
                 <a href="resources.html" id="resources-btn" class="action-btn">Resources</a>
-                <button id="share-btn" class="action-btn">Share This Page</button>
+                <a href="contact.html" id="contact-btn" class="action-btn">Contact</a>
             </div>
         </section>
     </main>
