@@ -2,6 +2,11 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Resource Usage Chart - Data based on research from IEA and Yale e360 studies
     const resourceCtx = document.getElementById('resource-usage-chart').getContext('2d');
+    
+    // Set chart size to match container
+    const chartCanvas = document.getElementById('resource-usage-chart');
+    chartCanvas.height = 300;
+    
     const resourceChart = new Chart(resourceCtx, {
         type: 'bar',
         data: {
@@ -12,37 +17,60 @@ document.addEventListener('DOMContentLoaded', function() {
                     data: [240, 96], // Based on IEA data showing data centers use ~240-340 TWh, with sustainable approaches reducing by ~60%
                     backgroundColor: '#4CAF50',
                     borderColor: '#2E7D32',
-                    borderWidth: 1
+                    borderWidth: 1,
+                    borderRadius: 6,
+                    maxBarThickness: 60
                 },
                 {
                     label: 'Water Usage (Million Gallons)',
                     data: [12, 3.5], // Based on Yale e360 report on water usage for cooling data centers
                     backgroundColor: '#2196F3',
                     borderColor: '#1565C0',
-                    borderWidth: 1
+                    borderWidth: 1,
+                    borderRadius: 6,
+                    maxBarThickness: 60
                 },
                 {
                     label: 'Carbon Emissions (Mt CO2)',
                     data: [330, 115], // Based on IEA data showing data centers account for ~330 Mt CO2 equivalent
                     backgroundColor: '#FFC107',
                     borderColor: '#FFA000',
-                    borderWidth: 1
+                    borderWidth: 1,
+                    borderRadius: 6,
+                    maxBarThickness: 60
                 }
             ]
         },
         options: {
             responsive: true,
+            maintainAspectRatio: false,
             plugins: {
                 title: {
-                    display: true,
-                    text: 'Resource Consumption Comparison',
-                    color: '#1B5E20',
-                    font: {
-                        size: 16
-                    }
+                    display: false, // Hide title as we're using an h3 in the container
                 },
                 legend: {
-                    position: 'bottom'
+                    position: 'bottom',
+                    labels: {
+                        padding: 20,
+                        font: {
+                            size: 12,
+                            weight: 'bold'
+                        },
+                        usePointStyle: true,
+                        pointStyle: 'rect'
+                    }
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(46, 125, 50, 0.9)',
+                    titleFont: {
+                        size: 14,
+                        weight: 'bold'
+                    },
+                    bodyFont: {
+                        size: 13
+                    },
+                    padding: 12,
+                    cornerRadius: 8
                 }
             },
             scales: {
@@ -50,8 +78,26 @@ document.addEventListener('DOMContentLoaded', function() {
                     beginAtZero: true,
                     title: {
                         display: true,
-                        text: 'Relative Usage (%)',
-                        color: '#1B5E20'
+                        text: 'Relative Usage',
+                        color: '#1B5E20',
+                        font: {
+                            weight: 'bold',
+                            size: 13
+                        },
+                        padding: {top: 0, bottom: 10}
+                    },
+                    grid: {
+                        color: 'rgba(0, 0, 0, 0.05)'
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false
+                    },
+                    ticks: {
+                        font: {
+                            weight: 'bold'
+                        }
                     }
                 }
             },
@@ -61,6 +107,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
+
+
 
     // Pillar 1: Model Size Slider
     const modelSizeSlider = document.getElementById('model-size');
